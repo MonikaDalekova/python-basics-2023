@@ -1,0 +1,17 @@
+inherited_money = float(input())
+living_year = int(input())
+
+ages = 17
+
+for every_year in range(1800, living_year + 1):
+    if every_year % 2 == 0:
+        ages += 1
+        inherited_money -= 12000
+    else:
+        ages += 1
+        inherited_money -= 12000 + 50 * ages
+
+if inherited_money < 0:
+    print(f"He will need {abs(inherited_money):.2f} dollars to survive.")
+else:
+    print(f"Yes! He will live a carefree life and will have {abs(inherited_money):.2f} dollars left.")
