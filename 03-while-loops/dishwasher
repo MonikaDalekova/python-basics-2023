@@ -1,0 +1,27 @@
+bottles_detergent = int(input()) * 750
+
+cleaned_plates = 0
+cleaned_pots = 0
+
+counter = 0
+while True:
+    command = input()
+    if command == "End":
+        break
+    else:
+        dishes = int(command)
+        counter += 1
+        if counter % 3 == 0:
+            cleaned_pots += int(command)
+            bottles_detergent -= int(command) * 15
+        else:
+            cleaned_plates += int(command)
+            bottles_detergent -= int(command) * 5
+    if bottles_detergent < 0:
+        break
+if bottles_detergent >= 0:
+    print("Detergent was enough!")
+    print(f"{cleaned_plates} dishes and {cleaned_pots} pots were washed.")
+    print(f"Leftover detergent {bottles_detergent} ml.")
+else:
+    print(f"Not enough detergent, {abs(bottles_detergent)} ml. more necessary!")
